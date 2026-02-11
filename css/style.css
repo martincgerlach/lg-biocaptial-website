@@ -1,109 +1,185 @@
-/* BASIC RESET */
+/* RESET & BODY */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* BODY */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #111;
-  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f7f7f7;
+  color: #1a1a1a;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 /* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: #fff;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 20px 0;
+  margin-bottom: 40px;
 }
 
-header .logo {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-header nav ul {
-  display: flex;
-  gap: 30px;
+header nav {
+  text-align: center;
 }
 
 header nav a {
   text-decoration: none;
-  color: #111;
-  transition: color 0.3s ease;
+  color: #007bff;
+  margin: 0 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: 0.3s;
 }
 
 header nav a:hover {
-  color: #007bff;
+  background: #007bff;
+  color: #fff;
 }
 
-/* SECTIONS */
-section {
-  padding: 100px 40px;
-  max-width: 1000px;
-  margin: 0 auto;
+/* PROFILE SECTION */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.profile-image img {
+  width: 380px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.12);
+  object-fit: cover;
+}
+
+.profile-content {
+  flex: 1;
+  min-width: 320px;
+}
+
+.profile-content h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.profile-content .title {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.profile-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-section.visible {
+.profile-content p.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* HERO */
-.hero h1 {
-  font-size: 48px;
+.achievements-list {
+  list-style: disc inside;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.achievements-list li {
+  margin-bottom: 10px;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 32px;
+  color: #007bff;
   margin-bottom: 20px;
 }
 
-.hero p {
-  font-size: 20px;
-  color: #555;
+section p {
+  font-size: 18px;
+  line-height: 1.8;
 }
 
-/* FORM */
+/* CONTACT FORM */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 500px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-input, textarea {
+form input, form textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
-  transition: border-color 0.3s ease;
+  width: 100%;
 }
 
-input:focus, textarea:focus {
+form input:focus, form textarea:focus {
   border-color: #007bff;
   outline: none;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
 }
 
-button {
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
+form button {
   background: #007bff;
-  color: #fff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.3s;
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
 }
 
-button:hover {
+form button:hover {
   background: #0056b3;
+}
+
+/* STATUS MESSAGE */
+#status-message {
+  font-size: 16px;
+  color: green;
+  margin-top: 8px;
+}
+
+/* RESPONSIVE PROFILE */
+@media (max-width: 900px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image img {
+    width: 80%;
+  }
+
+  .profile-content {
+    text-align: center;
+  }
 }

@@ -7,56 +7,77 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <!-- HEADER -->
   <header>
-    <div class="logo">LG BioCapital</div>
     <nav>
-      <ul>
-        <li><a href="#about">About us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="#profile-page">Profile</a>
+      <a href="#about">About us</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>We empower biotech innovation</h1>
-    <p>Partnering with biotech companies to accelerate growth and impact.</p>
+  <!-- PROFILE SECTION -->
+  <section id="profile-page">
+    <div class="profile-container">
+      <div class="profile-image">
+        <img src="Assets/images/Photo Lene Gerlach Copenhagen Jan 2026.jpg" alt="Profile photo of LG BioCapital">
+      </div>
+
+      <div class="profile-content">
+        <h1>LG BioCapital Partners</h1>
+        <p class="title">Experienced Venture Investor & Leader</p>
+
+        <div class="profile-text">
+          <p>I am an experienced venture investor and leader with more than 25 years across life science, planetary health, and sustainable innovation. My career spans research, intellectual property, business development, and over a decade in venture capital, financing more than 35 companies and building investment teams within the Danish Sovereign Fund and Hadean Ventures.</p>
+
+          <p>I am the Founder and Chairperson of Women in Life Science Denmark (WiLD), a non-profit promoting diversity and leadership across the Nordic life science ecosystem, now active in Denmark, Norway, and Finland. Recognised among the Top Women in VC and Nordic Life Science, I am an active communicator, experienced board leader, and mentor with a broad network across LPs, venture funds, universities, and innovation agencies.</p>
+        </div>
+
+        <h3>Key Achievements</h3>
+        <ul class="achievements-list">
+          <li>€125M+ raised across VC funds and 35+ portfolio financings</li>
+          <li>23 board seats (18 as Chair) – governance and strategy</li>
+          <li>Headline deals: €23M Series A for Hoba Therapeutics, €27M Series A for Synklino, €25M Series B for MedTrace</li>
+          <li>Founded Women in Life Science Denmark (WiLD) with 250+ executive members</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- ABOUT SECTION -->
   <section id="about">
-    <h2>About Us</h2>
-    <p>LG BioCapital Partners is a consultancy dedicated to guiding biotech companies through strategic growth and operational excellence.</p>
+    <h2>About LG BioCapital Partners</h2>
+    <p>We invest in life science and sustainable innovation with a focus on building long-term value. Our approach combines deep industry expertise with hands-on operational guidance, helping entrepreneurs and companies grow strategically and sustainably.</p>
   </section>
 
   <!-- SERVICES SECTION -->
   <section id="services">
     <h2>Services</h2>
-    <ul>
-      <li>Strategy Consulting</li>
-      <li>Operational Guidance</li>
-      <li>Investment Advisory</li>
-    </ul>
+    <p>Venture investment, board leadership, mentoring entrepreneurs, strategic advisory, and promoting diversity and inclusion in life science leadership across the Nordic ecosystem.</p>
   </section>
 
   <!-- APPROACH SECTION -->
   <section id="approach">
     <h2>Our Approach</h2>
-    <p>We work closely with our clients, combining deep industry knowledge with data-driven insights to drive measurable outcomes.</p>
+    <p>We combine rigorous due diligence, strategic networking, and active mentorship to drive success for portfolio companies and investors alike. Our methodology emphasizes long-term partnerships, hands-on support, and measurable impact.</p>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT FORM -->
   <section id="contact">
-    <h2>Contact</h2>
-    <form>
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+    <div class="container">
+      <h2>Contact</h2>
+      <p>If you would like to get in touch, please fill out the form below:</p>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="status-message"></p>
+      </form>
+    </div>
   </section>
 
   <script src="js/main.js"></script>
