@@ -3,83 +3,363 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LG BioCapital Partners</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>LG BioCapital</title>
+  <meta
+    name="description"
+    content="Strategic advisory at the intersection of science, IP, and capital."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260504-1">
 </head>
 <body>
+  <div class="site-frame">
+    <header class="hero" id="home">
+      <picture class="hero-picture">
+        <source media="(min-width: 768px)" srcset="figma-assets/desktop-hero-background.png">
+        <img class="hero-photo" src="figma-assets/hero-background.png" alt="Lene Gerlach in a pale blue suit">
+      </picture>
+      <div class="hero-overlay"></div>
 
-  <!-- HEADER -->
-  <header>
-    <nav>
-      <a href="#profile-page">Profile</a>
-      <a href="#about">About us</a>
-      <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+      <a class="logo" href="#home" aria-label="LG BioCapital home">
+        <span class="logo-lg">LG</span>
+        <span class="logo-bio">bio</span>
+        <span class="logo-capital">capital</span>
+      </a>
 
-  <!-- PROFILE SECTION -->
-  <section id="profile-page">
-    <div class="profile-container">
-      <div class="profile-image">
-        <img src="Assets/images/Photo Lene Gerlach Copenhagen Jan 2026.jpg" alt="Profile photo of LG BioCapital">
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#about">about</a>
+        <a href="#services">services</a>
+        <a href="#approach">approach</a>
+        <a href="#news">news</a>
+        <a href="#contact">contact</a>
+      </nav>
+
+      <div class="hero-copy">
+        <h1>Strategic Advisory at the Intersection of Science, IP, and Capital</h1>
+        <p>
+          Advising life science companies, investors, and boards on IP strategy,
+          company positioning, capital raising, and transaction readiness at
+          critical inflection points
+        </p>
       </div>
 
-      <div class="profile-content">
-        <h1>LG BioCapital Partners</h1>
-        <p class="title">Experienced Venture Investor & Leader</p>
+      <div class="hero-actions">
+        <a class="button button-light" href="#services">Explore advisory areas</a>
+        <a class="button button-light" href="#contact">Schedule a conversation</a>
+      </div>
+    </header>
 
-        <div class="profile-text">
-          <p>I am an experienced venture investor and leader with more than 25 years across life science, planetary health, and sustainable innovation. My career spans research, intellectual property, business development, and over a decade in venture capital, financing more than 35 companies and building investment teams within the Danish Sovereign Fund and Hadean Ventures.</p>
+    <main>
+      <section class="publication-strip" aria-label="Selected media">
+        <div class="publication-track">
+          <span><img src="figma-assets/logo-media-1.png" alt="Nordic Life Science"></span>
+          <span><img src="figma-assets/logo-media-2.png" alt="BioStock"></span>
+          <span><img src="figma-assets/logo-media-3.png" alt="Coulter Partners"></span>
+          <span><img src="figma-assets/logo-media-4.png" alt="POV International"></span>
+          <span><img src="figma-assets/logo-media-5.svg" alt="Dansk Industri"></span>
+        </div>
+      </section>
 
-          <p>I am the Founder and Chairperson of Women in Life Science Denmark (WiLD), a non-profit promoting diversity and leadership across the Nordic life science ecosystem, now active in Denmark, Norway, and Finland. Recognised among the Top Women in VC and Nordic Life Science, I am an active communicator, experienced board leader, and mentor with a broad network across LPs, venture funds, universities, and innovation agencies.</p>
+      <section class="intro-section" id="about">
+        <h2>Driven by Facts. Focused on Results</h2>
+        <figure class="intro-image">
+          <picture>
+            <source media="(min-width: 768px)" srcset="figma-assets/desktop-driven-by-facts.png">
+            <img src="figma-assets/driven-by-facts.png" alt="Portrait of Lene Gerlach">
+          </picture>
+        </figure>
+        <p>
+          I advise biotech and health innovation companies on how to position
+          themselves for investment, partnerships, and growth. I combine deep IP
+          and scientific understanding with strategic and commercial insight,
+          enabling clients to strengthen their equity story and maximize
+          long-term value. I work closely with founders, boards, and investors
+          at pivotal stages of company development.
+        </p>
+        <p class="intro-callout">
+          I work with companies at the moments that matter most - when the right
+          strategic choices define long-term value.
+        </p>
+        <a class="button button-lime" href="#approach">read more about approach</a>
+      </section>
+
+      <section class="services-section" id="services">
+        <h2>My Skills <span>&amp; Services</span></h2>
+        <div class="service-list">
+          <article>
+            <h3>Strategic Advisory</h3>
+            <p>
+              Advising life science companies and investors on IP strategy,
+              company positioning, capital strategy, and transaction readiness at
+              critical inflection points.
+            </p>
+          </article>
+          <article>
+            <h3>Board &amp; Executive Roles</h3>
+            <p>
+              Serving as board member, chair, or strategic advisor to leadership
+              teams, providing experienced guidance on governance, strategy, and
+              value creation.
+            </p>
+          </article>
+          <article>
+            <h3>Venture &amp; Portfolio Engagement</h3>
+            <p>
+              Advising venture funds on deal sourcing, due diligence, IP
+              evaluation, and portfolio company strategy.
+            </p>
+          </article>
+          <article>
+            <h3>Communication &amp; Speaking</h3>
+            <p>
+              Delivering talks, moderating panels, and contributing to strategic
+              discussions on life science innovation, leadership, and diversity
+              in the sector.
+            </p>
+          </article>
         </div>
 
-        <h3>Key Achievements</h3>
-        <ul class="achievements-list">
-          <li>€125M+ raised across VC funds and 35+ portfolio financings</li>
-          <li>23 board seats (18 as Chair) – governance and strategy</li>
-          <li>Headline deals: €23M Series A for Hoba Therapeutics, €27M Series A for Synklino, €25M Series B for MedTrace</li>
-          <li>Founded Women in Life Science Denmark (WiLD) with 250+ executive members</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        <div class="mini-cta">
+          <p>Book a meeting with me and let’s explore how we can work together.</p>
+          <a class="button button-lime" href="#contact">book a call</a>
+        </div>
+      </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h2>About LG BioCapital Partners</h2>
-    <p>We invest in life science and sustainable innovation with a focus on building long-term value. Our approach combines deep industry expertise with hands-on operational guidance, helping entrepreneurs and companies grow strategically and sustainably.</p>
-  </section>
+      <section class="approach-section" id="approach">
+        <h2>Approach</h2>
+        <article class="approach-item align-right">
+          <h3>Responsibility</h3>
+          <p>
+            A strong sense of responsibility underpins every engagement. I
+            provide honest, independent advice-even when it is challenging-and
+            take ownership of the quality and impact of the work I deliver.
+          </p>
+        </article>
+        <article class="approach-item align-left lime-text">
+          <h3>Long-Term Perspective</h3>
+          <p>
+            Decisions in life sciences shape value over many years. The focus is
+            not on short-term optimization, but on building sustainable
+            positions-scientifically, strategically, and financially.
+          </p>
+        </article>
+        <article class="approach-item align-right">
+          <h3>Strategic Decision-Making</h3>
+          <p>
+            Complex science requires clear strategic choices. Lene supports
+            leadership teams in defining priorities, evaluating trade-offs, and
+            making decisions that stand up to investor, partner, and board
+            scrutiny.
+          </p>
+        </article>
+        <article class="approach-item align-left lime-text">
+          <h3>Capital Discipline</h3>
+          <p>
+            Capital is a critical resource. A disciplined approach ensures that
+            financing strategies, resource allocation, and development plans are
+            aligned to maximize long-term value creation.
+          </p>
+        </article>
+        <article class="approach-item align-right">
+          <h3>Partnership Mindset</h3>
+          <p>
+            Value in life sciences is often realized through partnerships. The
+            approach emphasizes positioning, credibility, and alignment-ensuring
+            companies are prepared to engage with investors, pharma, and other
+            stakeholders from a position of strength.
+          </p>
+        </article>
+      </section>
 
-  <!-- SERVICES SECTION -->
-  <section id="services">
-    <h2>Services</h2>
-    <p>Venture investment, board leadership, mentoring entrepreneurs, strategic advisory, and promoting diversity and inclusion in life science leadership across the Nordic ecosystem.</p>
-  </section>
+      <section class="news-section" id="news">
+        <h2>news / interviews</h2>
+        <div class="card-scroller">
+          <article class="news-card">
+            <img src="figma-assets/news-power-loop.png" alt="Article preview for The power loop">
+            <h3>The power loop: How female leadership and women’s health reinforce each other</h3>
+            <p>Alexandra Hoegberg - March 7, 2026</p>
+            <a class="button button-blue" href="https://nordiclifescience.org/the-power-loop-how-female-leadership-and-womens-health-reinforce-each-other/">read more</a>
+          </article>
+          <article class="news-card">
+            <img src="figma-assets/news-wild-nordics.png" alt="Article preview for Women in Life Science Denmark">
+            <h3>Women in Life Science Denmark expands Nordic footprint</h3>
+            <p>Nordic Life Science</p>
+            <a class="button button-blue" href="https://nordiclifescience.org/women-in-life-science-denmark-expands-nordic-footprint/">read more</a>
+          </article>
+          <article class="news-card">
+            <img src="figma-assets/news-arguseye.png" alt="Article preview for ArgusEye funding">
+            <h3>ArgusEye secures EUR 2.8 million</h3>
+            <p>Alexandra Hoegberg - March 7, 2026</p>
+            <a class="button button-blue" href="https://nordiclifescience.org/arguseye-secures-eur-2-8-million/">read more</a>
+          </article>
+          <article class="news-card">
+            <img src="figma-assets/news-capital-quote.png" alt="Article preview about female entrepreneurs raising capital">
+            <h3>“I am optimistic that more female entrepreneurs will experience success in raising capital”</h3>
+            <p>Alexandra Hoegberg - March 7, 2026</p>
+            <a class="button button-blue" href="https://nordiclifescience.org/i-am-optimistic-that-more-female-entrepreneurs-will-experience-success-in-raising-capital/">read more</a>
+          </article>
+        </div>
+      </section>
 
-  <!-- APPROACH SECTION -->
-  <section id="approach">
-    <h2>Our Approach</h2>
-    <p>We combine rigorous due diligence, strategic networking, and active mentorship to drive success for portfolio companies and investors alike. Our methodology emphasizes long-term partnerships, hands-on support, and measurable impact.</p>
-  </section>
+      <section class="experience-section" id="experience">
+        <h2>Experience</h2>
+        <div class="experience-scroller">
+          <article>
+            <h3>Board Experience</h3>
+            <p>
+              Board member in 23 life science companies, including 18 roles as
+              chairperson. Extensive experience in governance, strategic
+              oversight, and guiding companies through critical value-creating
+              decisions.
+            </p>
+          </article>
+          <article>
+            <h3>Investor Experience</h3>
+            <p>
+              12 years of experience as an investor in venture capital funds,
+              with deep involvement in evaluating life science opportunities,
+              portfolio strategy, and value creation.
+            </p>
+          </article>
+          <article>
+            <h3>Intellectual Property</h3>
+            <p>
+              European Patent Attorney with extensive experience in IP strategy,
+              patent portfolio development, and the role of IP in transactions,
+              financing, and company positioning.
+            </p>
+          </article>
+          <article>
+            <h3>Women in Life Science Nordics</h3>
+            <p>
+              Co-founder, Chair &amp; Executive CEO WiLD Denmark. Driving
+              strategic initiatives, partnerships, and cross-Nordic
+              collaboration across Denmark, Norway, and Finland.
+            </p>
+          </article>
+        </div>
+        <p class="scroll-note">scroll sideways</p>
+      </section>
 
-  <!-- CONTACT FORM -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>If you would like to get in touch, please fill out the form below:</p>
-      <form id="contact-form">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-        <p id="status-message"></p>
-      </form>
-    </div>
-  </section>
+      <section class="testimonials-section">
+        <h2>testimonials</h2>
+        <p class="testimonial-name">Name</p>
+        <p class="testimonial-meta">Malin Otmani - January 23, 2026</p>
+        <p>
+          This section will showcase selected client testimonials, presented in
+          a dynamic, rotating slider. Each story highlights the impact of our
+          collaboration, offering insight into how we support clients in making
+          confident, high-stakes decisions and achieving meaningful, long-term
+          results.
+        </p>
+      </section>
 
-  <script src="js/main.js"></script>
+      <section class="linkedin-section" id="linkedin">
+        <h2>linkedin</h2>
+        <div class="card-scroller">
+          <article class="linkedin-card">
+            <img src="images/Lene_GrabskaFotografia (6).jpg" alt="Lene Gerlach portrait">
+            <h3>Happy International Women’s Day - Denmark we need to do better!</h3>
+            <a class="button button-plum" href="https://www.linkedin.com/in/lene-gerlach-87426442/">read more</a>
+          </article>
+          <article class="linkedin-card">
+            <img src="images/Lene_GrabskaFotografia (7).jpg" alt="Lene Gerlach portrait">
+            <h3>Happy International Women’s Day - Denmark we need to do better!</h3>
+            <a class="button button-plum" href="https://www.linkedin.com/in/lene-gerlach-87426442/">read more</a>
+          </article>
+          <article class="linkedin-card">
+            <img src="images/Lene_GrabskaFotografia (2).jpg" alt="Lene Gerlach portrait">
+            <h3>Happy International Women’s Day - Denmark we need to do better!</h3>
+            <a class="button button-plum" href="https://www.linkedin.com/in/lene-gerlach-87426442/">read more</a>
+          </article>
+        </div>
+        <p class="linkedin-copy">Discover My LinkedIn Profile &amp; Follow to stay updated</p>
+        <a class="button button-plum linkedin-profile" href="https://www.linkedin.com/in/lene-gerlach-87426442/">LinkedIn Profile</a>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <h2>contact</h2>
+        <p class="contact-lead">Let’s connect, book a meeting and discover how we can work together.</p>
+        <address>
+          <a href="mailto:lene.gerlach@gmail.com">lene.gerlach@gmail.com</a>
+          <a href="tel:+4520317460">+45 20 31 74 60</a>
+        </address>
+        <p class="form-note">If you prefer, feel free to fill out the form.</p>
+        <form
+          id="contact-form"
+          action="mailto:lene.gerlach@gmail.com"
+          method="post"
+          enctype="text/plain"
+          data-form-endpoint="https://api.web3forms.com/submit"
+          data-recipient-email="lene.gerlach@gmail.com"
+        >
+          <input type="hidden" name="access_key" value="">
+          <input type="hidden" name="subject" value="New message from LG BioCapital website">
+          <input type="hidden" name="from_name" value="LG BioCapital website">
+          <input class="botcheck" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+          <div class="form-row">
+            <label>
+              <input type="text" name="name" placeholder="name" required>
+            </label>
+            <label>
+              <input type="text" name="last_name" placeholder="last name">
+            </label>
+          </div>
+          <label>
+            <input type="email" name="email" placeholder="email" required>
+          </label>
+          <label class="message-field">
+            <textarea name="message" placeholder="message" required></textarea>
+          </label>
+          <button class="button button-plum" type="submit">send a message</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+        <figure class="contact-image">
+          <img src="images/Lene_GrabskaFotografia (10).jpg" alt="Lene Gerlach smiling">
+        </figure>
+      </section>
+
+      <section class="image-footer">
+        <img src="images/Lene_GrabskaFotografia (10).jpg" alt="Lene Gerlach smiling">
+        <a class="logo logo-footer" href="#home" aria-label="LG BioCapital home">
+          <span class="logo-lg">LG</span>
+          <span class="logo-bio">bio</span>
+          <span class="logo-capital">capital</span>
+        </a>
+      </section>
+
+      <footer class="site-footer">
+        <h2>I am a Woman who takes responsibility and acts on it.</h2>
+        <p>Let’s collaborate - reach out and discover how we can work together to create value.</p>
+        <div class="footer-actions">
+          <a class="button button-plum" href="https://www.linkedin.com/in/lene-gerlach-87426442/">see LinkedIn</a>
+          <a class="button button-plum" href="#contact">see my calendar</a>
+        </div>
+        <div class="footer-nav" aria-label="Footer navigation">
+          <div>
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#services">services</a>
+            <a href="#approach">approach</a>
+          </div>
+          <div>
+            <a href="#news">news</a>
+            <a href="#experience">experience</a>
+            <a href="#linkedin">linkedin</a>
+            <a href="#contact">contact</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/main.js?v=20260504-1"></script>
 </body>
 </html>
