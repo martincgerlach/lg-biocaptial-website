@@ -38,13 +38,15 @@ if (form && statusMessage) {
     const message = String(formData.get("message") || "").trim();
     const fullName = [firstName, lastName].filter(Boolean).join(" ");
     const subject = "New message from LG BioCapital website";
-    const body = [
+    const bodyLines = [
       `Name: ${fullName || "Not provided"}`,
-      `Email: ${email || "Not provided"}`,
-      "",
-      "Message:",
-      message,
-    ].join("\n");
+    ];
+
+    if (email) {
+      bodyLines.push(`Email: ${email}`);
+    }
+
+    const body = bodyLines.concat(["", "Message:", message]).join("\n");
 
     return `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
