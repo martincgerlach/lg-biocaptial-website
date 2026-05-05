@@ -1,6 +1,6 @@
 :root {
   --plum: #45242f;
-  --violet: #472e56;
+  --violet: #45242f;
   --lime: #b4af2f;
   --pale-blue: #ecf3ff;
   --button-blue: #d1e2fd;
@@ -20,6 +20,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background: #f5f5f5;
   color: var(--plum);
   font-family: "Inter", Arial, sans-serif;
@@ -78,37 +79,20 @@ a {
   top: 30px;
   z-index: 2;
   display: block;
-  width: 200px;
-  height: 42px;
+  width: 217px;
+  height: 44px;
+  overflow: hidden;
   text-decoration: none;
-  text-transform: lowercase;
 }
 
-.logo span {
+.logo img {
   position: absolute;
-  color: var(--white);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.logo-lg {
-  left: 0;
-  top: 19px;
-  font-size: 24px;
-  text-transform: uppercase;
-}
-
-.logo-bio {
-  left: 36px;
-  top: 0;
-  font-size: 44px;
-}
-
-.logo-capital {
-  left: 96px;
-  top: 19px;
-  font-size: 24px;
+  left: -34px;
+  top: -45px;
+  width: 277px;
+  max-width: none;
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 
 .menu-button {
@@ -117,9 +101,9 @@ a {
   top: 38px;
   z-index: 4;
   display: grid;
-  gap: 9px;
+  gap: 7px;
   width: 38px;
-  height: 26px;
+  height: 31px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -165,16 +149,16 @@ a {
 
 .hero-copy {
   position: absolute;
-  right: 46px;
+  right: 22px;
   top: 407px;
   z-index: 1;
-  width: 264px;
+  width: 234px;
   text-align: right;
 }
 
 .hero h1 {
   margin: 0 0 18px auto;
-  width: 264px;
+  width: 234px;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 28px;
   font-weight: 600;
@@ -240,16 +224,29 @@ a {
   height: 132px;
   padding: 18px 0 0 17px;
   background: var(--white);
+  overflow: hidden;
 }
 
 .publication-track {
   display: flex;
-  gap: 58px;
-  width: 397px;
+  width: max-content;
   height: 70px;
-  overflow-x: auto;
+  overflow-x: visible;
   overflow-y: hidden;
   scrollbar-width: none;
+  animation: logo-marquee 34s linear infinite;
+}
+
+.publication-track:hover {
+  animation-play-state: paused;
+}
+
+.publication-set {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex: 0 0 auto;
+  padding-right: 40px;
 }
 
 .publication-track::-webkit-scrollbar,
@@ -262,7 +259,7 @@ a {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  min-width: 116px;
+  min-width: var(--logo-slot, 116px);
   color: var(--violet);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 23px;
@@ -272,9 +269,53 @@ a {
 }
 
 .publication-track img {
-  max-width: 150px;
-  max-height: 52px;
+  width: var(--logo-width, 92px);
+  max-width: none;
+  max-height: var(--logo-height, 42px);
+  height: auto;
   object-fit: contain;
+}
+
+.publication-logo-wild {
+  --logo-slot: 98px;
+  --logo-width: 86px;
+  --logo-height: 30px;
+}
+
+.publication-logo-hadean {
+  --logo-slot: 126px;
+  --logo-width: 113px;
+  --logo-height: 22px;
+}
+
+.publication-logo-cbio {
+  --logo-slot: 58px;
+  --logo-width: 39px;
+  --logo-height: 31px;
+}
+
+.publication-logo-innovation {
+  --logo-slot: 138px;
+  --logo-width: 129px;
+  --logo-height: 15px;
+}
+
+.publication-logo-invest {
+  --logo-slot: 82px;
+  --logo-width: 69px;
+  --logo-height: 37px;
+}
+
+.publication-logo-wide {
+  --logo-slot: 126px;
+  --logo-width: 112px;
+  --logo-height: 42px;
+}
+
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .intro-section {
@@ -348,7 +389,7 @@ h3 {
 
 .intro-section .intro-callout {
   margin-top: 18px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.8;
   letter-spacing: 1.8px;
 }
@@ -373,7 +414,7 @@ h3 {
 
 .service-list {
   display: grid;
-  gap: 10px;
+  gap: 18px;
   margin-top: 54px;
 }
 
@@ -523,7 +564,7 @@ h3 {
 
 .news-card p {
   margin: 14px 0 18px;
-  color: #bcb4ff;
+  color: var(--plum);
   font-size: 15px;
   line-height: 1.1;
 }
@@ -538,24 +579,63 @@ h3 {
   background: var(--pale-blue);
 }
 
+.experience-header {
+  display: grid;
+  gap: 34px;
+  padding: 0 22px;
+}
+
+.experience-section h2 {
+  margin-left: 0;
+  color: var(--lime);
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+}
+
+.experience-intro {
+  padding-left: 22px;
+  border-left: 1px solid var(--lime);
+  color: var(--lime);
+}
+
+.experience-intro p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.9px;
+}
+
+.experience-intro p + p {
+  margin-top: 18px;
+}
+
 .experience-scroller {
   display: flex;
-  gap: 29px;
-  margin-top: 50px;
+  gap: 36px;
+  margin-top: 76px;
   padding: 0 22px;
   overflow-x: auto;
+  scroll-snap-type: x proximity;
   scrollbar-width: none;
 }
 
 .experience-scroller article {
   flex: 0 0 329px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--plum);
+  text-align: center;
+  scroll-snap-align: center;
 }
 
 .experience-scroller h3 {
-  height: 99px;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
+  min-height: 72px;
   color: var(--plum);
   font-size: 30px;
   line-height: 1.1;
@@ -563,15 +643,26 @@ h3 {
 }
 
 .experience-scroller p {
-  margin: 22px 0 0;
+  margin: 18px 0 0;
+  max-width: 100%;
   color: var(--plum);
   font-size: 18px;
   line-height: 1.2;
   letter-spacing: 0.9px;
 }
 
+.experience-scroller .experience-meta {
+  margin-top: 13px;
+  min-height: 41px;
+  color: var(--lime);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+}
+
 .scroll-note {
-  margin: 42px 28px 0 0;
+  margin: 62px 28px 0 0;
   color: #000;
   font-size: 11px;
   line-height: 1.5;
@@ -615,22 +706,25 @@ h3 {
 .linkedin-section {
   padding: 60px 0 70px;
   background: var(--pale-blue);
+  text-align: center;
 }
 
 .linkedin-section h2 {
   margin-left: 22px;
+  text-align: left;
 }
 
 .linkedin-card {
   flex: 0 0 330px;
   min-height: 540px;
-  padding: 33px 13px 20px;
+  padding: 20px 20px 24px;
   border-radius: 6px;
   background: var(--white);
+  text-align: left;
 }
 
 .linkedin-card img {
-  width: 292px;
+  width: 100%;
   height: 294px;
   object-fit: cover;
   object-position: center 16%;
@@ -638,7 +732,7 @@ h3 {
 
 .linkedin-card h3 {
   margin: 9px 0 18px;
-  color: #000;
+  color: var(--plum);
   font-size: 30px;
   line-height: 1.3;
 }
@@ -665,7 +759,7 @@ h3 {
 
 .linkedin-profile {
   width: 242px;
-  margin-left: 98px;
+  margin: 0 auto;
 }
 
 .contact-section {
@@ -802,13 +896,14 @@ form button {
 }
 
 .site-footer {
+  position: relative;
   min-height: 708px;
   padding: 83px 24px 58px;
   background: var(--lime);
 }
 
 .site-footer h2 {
-  margin: 0;
+  margin: 54px 0 0;
   color: var(--plum);
   font-size: 40px;
   line-height: 1.1;
@@ -829,6 +924,16 @@ form button {
 
 .footer-actions .button {
   color: var(--pale-blue);
+}
+
+.footer-logo {
+  left: 24px;
+  top: 28px;
+}
+
+.logo-dark img,
+.site-footer .logo img {
+  filter: none;
 }
 
 .footer-nav {
@@ -857,6 +962,94 @@ form button {
   letter-spacing: 2.52px;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .site-frame {
+    width: 100vw;
+    max-width: 440px;
+    margin: 0;
+  }
+
+  .hero-copy {
+    right: 22px;
+    width: 212px;
+  }
+
+  .hero h1 {
+    width: 212px;
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    left: auto;
+    right: 22px;
+    width: 212px;
+  }
+
+  .hero-actions .button {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+  }
+
+  .mini-cta p {
+    width: min(100%, 360px);
+    font-size: 28px;
+  }
+
+  .news-section .card-scroller {
+    flex-direction: column;
+    max-height: 650px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .news-card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .approach-section {
+    overflow: hidden;
+  }
+
+  .approach-item,
+  .approach-item.align-right,
+  .approach-item.align-left {
+    text-align: left;
+  }
+
+  .approach-item h3 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    overflow-wrap: anywhere;
+  }
+
+  .approach-item p {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    overflow-wrap: anywhere;
+  }
+
+  .intro-section p {
+    overflow-wrap: anywhere;
+  }
+
+  .intro-section .intro-callout {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .testimonials-section {
+    padding-top: 88px;
+    padding-bottom: 110px;
+  }
 }
 
 @media (min-width: 700px) {
@@ -908,9 +1101,9 @@ form button {
   }
 
   .site-nav {
-    inset: 55px max(64px, calc((100vw - 1512px) / 2 + 109px)) auto auto;
+    inset: 55px max(48px, calc((100vw - 1512px) / 2 + 96px)) auto auto;
     display: flex;
-    gap: 34px;
+    gap: 25px;
     width: auto;
     padding: 0;
     border: 0;
@@ -922,7 +1115,7 @@ form button {
 
   .site-nav a {
     padding: 0;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 2px;
   }
@@ -942,7 +1135,7 @@ form button {
   }
 
   .hero p {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 1.5;
     letter-spacing: -0.275px;
   }
@@ -983,21 +1176,16 @@ form button {
   }
 
   .publication-track {
-    width: calc(100% - 100px);
+    width: max-content;
     height: 168px;
-    margin: 0 auto;
-    gap: 96px;
-    overflow-x: auto;
+    margin: 0;
+    overflow-x: visible;
     overflow-y: hidden;
   }
 
-  .publication-track span {
-    min-width: 170px;
-  }
-
-  .publication-track img {
-    max-width: 260px;
-    max-height: 83px;
+  .publication-set {
+    gap: 72px;
+    padding-right: 72px;
   }
 
   .intro-section,
@@ -1055,12 +1243,13 @@ form button {
   }
 
   .intro-section p {
-    font-size: clamp(20px, 1.65vw, 25px);
+    font-size: 20px;
   }
 
   .intro-section .intro-callout {
     margin-top: 24px;
-    font-size: clamp(20px, 1.65vw, 25px);
+    font-size: 20px;
+    font-weight: 400;
   }
 
   .intro-section .button {
@@ -1114,7 +1303,7 @@ form button {
   }
 
   .service-list p {
-    font-size: clamp(18px, 1.65vw, 25px);
+    font-size: 20px;
   }
 
   .mini-cta {
@@ -1135,7 +1324,7 @@ form button {
 
   .approach-section {
     display: block;
-    min-height: 2005px;
+    min-height: auto;
   }
 
   .approach-section > h2 {
@@ -1150,7 +1339,7 @@ form button {
   }
 
   .approach-item + .approach-item {
-    margin-top: 90px;
+    margin-top: 74px;
   }
 
   .approach-item.align-right h3 {
@@ -1182,7 +1371,7 @@ form button {
   }
 
   .approach-item p {
-    font-size: clamp(20px, 1.65vw, 25px);
+    font-size: 20px;
   }
 
   .news-section h2,
@@ -1232,41 +1421,79 @@ form button {
 
   .experience-section {
     padding-top: 102px;
-    padding-bottom: 120px;
+    padding-bottom: 156px;
     background: var(--pale-blue);
+  }
+
+  .experience-header {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 602px);
+    align-items: center;
+    gap: 62px;
+    padding: 0;
+  }
+
+  .experience-section h2 {
+    color: var(--lime);
+    font-size: clamp(64px, 6.6vw, 100px);
+    line-height: 1.1;
+    letter-spacing: 0.1em;
+  }
+
+  .experience-intro {
+    padding-left: 40px;
+  }
+
+  .experience-intro p {
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+
+  .experience-intro p + p {
+    margin-top: 26px;
   }
 
   .experience-scroller {
     display: flex;
-    gap: 108px;
-    margin-top: 72px;
-    padding: 0 0 42px;
+    gap: 60px;
+    margin-top: 156px;
+    padding: 0 0 78px;
     overflow-x: auto;
+    scroll-padding-inline: var(--desktop-gutter);
     scrollbar-width: none;
   }
 
   .experience-scroller article {
-    flex: 0 0 523px;
+    flex: 0 0 clamp(390px, 31vw, 470px);
+    text-align: center;
   }
 
   .experience-scroller h3 {
+    min-height: 94px;
     font-size: 40px;
   }
 
   .experience-scroller p {
-    font-size: 25px;
+    max-width: 430px;
+    font-size: 20px;
     line-height: 1.5;
   }
 
+  .experience-scroller .experience-meta {
+    min-height: 52px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
   .scroll-note {
-    margin-right: 40px;
-    font-size: 25px;
+    margin: 36px 80px 0 0;
+    font-size: 18px;
     letter-spacing: 5px;
   }
 
   .testimonials-section {
-    padding-top: 110px;
-    padding-bottom: 120px;
+    padding-top: 130px;
+    padding-bottom: 150px;
   }
 
   .testimonials-section h2 {
@@ -1277,7 +1504,7 @@ form button {
   .testimonials-section p:last-child {
     max-width: 565px;
     margin: 0 auto;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 1.1;
   }
 
@@ -1312,7 +1539,7 @@ form button {
   }
 
   .linkedin-profile {
-    margin-left: 0;
+    margin: 0 auto;
   }
 
   .contact-section {
@@ -1326,7 +1553,7 @@ form button {
 
   .contact-section h2 {
     grid-column: 1 / -1;
-    justify-self: center;
+    justify-self: start;
     margin-bottom: 63px;
   }
 
@@ -1416,7 +1643,15 @@ form button {
 
   .site-footer h2 {
     max-width: 1190px;
+    margin-top: 0;
     font-size: clamp(60px, 6vw, 90px);
+  }
+
+  .footer-logo {
+    left: var(--desktop-gutter);
+    top: 55px;
+    transform: scale(1.45);
+    transform-origin: left top;
   }
 
   .site-footer > p {
