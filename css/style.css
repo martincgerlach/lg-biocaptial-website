@@ -1127,17 +1127,17 @@ form button {
   }
 
   .hero {
-    height: 801px;
+    height: clamp(801px, 54.785vw, 1122px);
     min-height: 0;
   }
 
   .hero-photo {
-    left: calc(50% - 1297px);
-    top: -307px;
-    width: 2054px;
-    height: 1125px;
+    left: calc(50% - 89.8vw);
+    top: -21.8vw;
+    width: max(2190px, 143vw);
+    height: auto;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
   }
 
   .hero-overlay {
@@ -1146,9 +1146,9 @@ form button {
   }
 
   .logo {
-    left: clamp(70px, 6vw, 91px);
+    left: clamp(70px, 5.8vw, 118px);
     top: 26px;
-    transform: scale(1.45);
+    transform: scale(clamp(1.45, 0.098vw, 2));
     transform-origin: left top;
   }
 
@@ -1157,9 +1157,9 @@ form button {
   }
 
   .site-nav {
-    inset: 55px max(48px, calc((100vw - 1512px) / 2 + 96px)) auto auto;
+    inset: clamp(55px, 3.55vw, 73px) clamp(64px, 5.8vw, 120px) auto auto;
     display: flex;
-    gap: 25px;
+    gap: clamp(34px, 2.2vw, 45px);
     width: auto;
     padding: 0;
     border: 0;
@@ -1171,35 +1171,35 @@ form button {
 
   .site-nav a {
     padding: 0;
-    font-size: 18px;
+    font-size: clamp(20px, 1.17vw, 24px);
     font-weight: 400;
     letter-spacing: 2px;
   }
 
   .hero-copy {
-    right: max(48px, calc((100vw - 1512px) / 2 + 109px));
-    top: 508px;
-    width: min(985px, calc(100vw - 260px));
+    right: clamp(64px, 5.8vw, 120px);
+    top: 63.5%;
+    width: min(1320px, calc(100vw - 260px));
     transform: none;
   }
 
   .hero h1 {
     width: 100%;
     margin-bottom: 0;
-    font-size: 38px;
+    font-size: clamp(38px, 2.55vw, 52px);
     line-height: 1.1;
   }
 
   .hero p {
-    font-size: 20px;
+    font-size: clamp(20px, 1.37vw, 28px);
     line-height: 1.5;
     letter-spacing: -0.275px;
   }
 
   .hero-actions {
     left: auto;
-    right: max(48px, calc((100vw - 1512px) / 2 + 109px));
-    top: 656px;
+    right: clamp(64px, 5.8vw, 120px);
+    top: 81%;
     bottom: auto;
     display: flex;
     width: auto;
@@ -1207,17 +1207,17 @@ form button {
   }
 
   .hero-actions .button {
-    min-height: 53px;
+    min-height: clamp(53px, 3.62vw, 74px);
     padding: 10px 24px;
-    font-size: 20px;
+    font-size: clamp(20px, 1.37vw, 28px);
   }
 
   .hero-actions .button:first-child {
-    width: 303px;
+    width: clamp(303px, 20.7vw, 424px);
   }
 
   .hero-actions .button:last-child {
-    width: 306px;
+    width: clamp(306px, 20.7vw, 424px);
   }
 
   .button {
@@ -1277,16 +1277,24 @@ form button {
 
   .intro-image {
     width: 100%;
+    max-width: none;
     height: clamp(560px, 49vw, 740px);
     margin: 34px 0 0;
   }
 
+  .intro-image picture {
+    position: absolute;
+  }
+
   .intro-image img {
-    left: -118px;
-    top: -337px;
-    width: 892px;
-    height: 1077px;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    top: -30%;
+    width: 128%;
+    height: auto;
+    max-width: none;
+    transform: translateX(-50%);
+    object-fit: cover;
   }
 
   .intro-copy {
