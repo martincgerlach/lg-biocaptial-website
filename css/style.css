@@ -37,6 +37,7 @@ a {
 }
 
 .site-frame {
+  --mobile-gutter: 22px;
   width: min(100%, 440px);
   margin: 0 auto;
   overflow: hidden;
@@ -75,7 +76,7 @@ a {
 
 .logo {
   position: absolute;
-  left: 21px;
+  left: var(--mobile-gutter);
   top: 30px;
   z-index: 2;
   display: block;
@@ -118,7 +119,7 @@ a {
 
 .site-nav {
   position: absolute;
-  inset: 82px 22px auto;
+  inset: 82px var(--mobile-gutter) auto;
   z-index: 3;
   display: grid;
   gap: 3px;
@@ -149,7 +150,7 @@ a {
 
 .hero-copy {
   position: absolute;
-  right: 22px;
+  right: var(--mobile-gutter);
   top: 407px;
   z-index: 1;
   width: 234px;
@@ -222,7 +223,7 @@ a {
 
 .publication-strip {
   height: 132px;
-  padding: 18px 0 0 17px;
+  padding: 18px var(--mobile-gutter) 0;
   background: var(--white);
   overflow: hidden;
 }
@@ -320,7 +321,7 @@ a {
 
 .intro-section {
   min-height: 1301px;
-  padding: 48px 22px 58px;
+  padding: 48px var(--mobile-gutter) 58px;
   background: var(--pale-blue);
 }
 
@@ -355,7 +356,8 @@ h3 {
 
 .intro-image {
   position: relative;
-  width: 393px;
+  width: 100%;
+  max-width: 393px;
   height: 531px;
   margin: 84px 0 23px;
   overflow: hidden;
@@ -387,6 +389,10 @@ h3 {
   letter-spacing: 0.54px;
 }
 
+.intro-copy {
+  display: grid;
+}
+
 .intro-section .intro-callout {
   margin-top: 18px;
   font-weight: 400;
@@ -400,7 +406,7 @@ h3 {
 }
 
 .services-section {
-  padding: 57px 22px 70px;
+  padding: 57px var(--mobile-gutter) 70px;
   background: var(--white);
 }
 
@@ -414,7 +420,7 @@ h3 {
 
 .service-list {
   display: grid;
-  gap: 18px;
+  gap: 24px;
   margin-top: 54px;
 }
 
@@ -477,7 +483,7 @@ h3 {
 }
 
 .approach-section {
-  padding: 67px 22px 77px;
+  padding: 67px var(--mobile-gutter) 77px;
   background: var(--pale-blue);
 }
 
@@ -525,7 +531,8 @@ h3 {
 .experience-section h2,
 .testimonials-section h2,
 .contact-section h2 {
-  margin-left: 22px;
+  margin-left: var(--mobile-gutter);
+  width: calc(100% - (var(--mobile-gutter) * 2));
   color: var(--plum);
 }
 
@@ -534,7 +541,7 @@ h3 {
   gap: 22px;
   width: 100%;
   margin-top: 51px;
-  padding: 18px 22px 18px;
+  padding: 18px var(--mobile-gutter) 18px;
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
@@ -582,7 +589,7 @@ h3 {
 .experience-header {
   display: grid;
   gap: 34px;
-  padding: 0 22px;
+  padding: 0 var(--mobile-gutter);
 }
 
 .experience-section h2 {
@@ -595,7 +602,7 @@ h3 {
 }
 
 .experience-intro {
-  padding-left: 22px;
+  padding-left: var(--mobile-gutter);
   border-left: 1px solid var(--lime);
   color: var(--lime);
 }
@@ -615,14 +622,15 @@ h3 {
   display: flex;
   gap: 36px;
   margin-top: 76px;
-  padding: 0 22px;
+  padding: 0 var(--mobile-gutter);
   overflow-x: auto;
   scroll-snap-type: x proximity;
   scrollbar-width: none;
 }
 
 .experience-scroller article {
-  flex: 0 0 329px;
+  flex: 0 0 calc(100vw - (var(--mobile-gutter) * 2));
+  max-width: 396px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -710,12 +718,14 @@ h3 {
 }
 
 .linkedin-section h2 {
-  margin-left: 22px;
+  margin-left: var(--mobile-gutter);
+  width: calc(100% - (var(--mobile-gutter) * 2));
   text-align: left;
 }
 
 .linkedin-card {
-  flex: 0 0 330px;
+  flex: 0 0 calc(100vw - (var(--mobile-gutter) * 2));
+  max-width: 396px;
   min-height: 540px;
   padding: 20px 20px 24px;
   border-radius: 6px;
@@ -746,7 +756,7 @@ h3 {
 
 .linkedin-copy {
   margin: 31px auto 36px;
-  width: 390px;
+  width: min(390px, calc(100% - (var(--mobile-gutter) * 2)));
   color: var(--plum);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 30px;
@@ -763,7 +773,7 @@ h3 {
 }
 
 .contact-section {
-  padding: 77px 22px 69px;
+  padding: 77px var(--mobile-gutter) 69px;
   background: var(--white);
 }
 
@@ -818,8 +828,8 @@ form {
 
 .form-row {
   display: grid;
-  grid-template-columns: 166px 220px;
-  gap: 7px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
 }
 
 label {
@@ -972,7 +982,7 @@ form button {
   }
 
   .hero-copy {
-    right: 22px;
+    right: var(--mobile-gutter);
     width: 212px;
   }
 
@@ -987,7 +997,7 @@ form button {
 
   .hero-actions {
     left: auto;
-    right: 22px;
+    right: var(--mobile-gutter);
     width: 212px;
   }
 
@@ -998,6 +1008,10 @@ form button {
     letter-spacing: 0.3px;
   }
 
+  .service-list {
+    gap: 28px;
+  }
+
   .mini-cta p {
     width: min(100%, 360px);
     font-size: 28px;
@@ -1005,7 +1019,7 @@ form button {
 
   .news-section .card-scroller {
     flex-direction: column;
-    max-height: 650px;
+    max-height: 720px;
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -1013,6 +1027,21 @@ form button {
   .news-card {
     flex: 0 0 auto;
     width: 100%;
+  }
+
+  .experience-scroller {
+    gap: 28px;
+    padding-bottom: 8px;
+    scroll-padding-inline: var(--mobile-gutter);
+  }
+
+  .experience-scroller article {
+    scroll-snap-align: start;
+  }
+
+  .scroll-note {
+    margin-top: 50px;
+    margin-right: var(--mobile-gutter);
   }
 
   .approach-section {
@@ -1047,8 +1076,35 @@ form button {
   }
 
   .testimonials-section {
-    padding-top: 88px;
-    padding-bottom: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 680px;
+    padding-top: 120px;
+    padding-bottom: 135px;
+  }
+
+  .testimonial-meta {
+    margin-bottom: 70px;
+  }
+
+  .linkedin-section .card-scroller {
+    gap: 18px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+  }
+
+  .linkedin-card {
+    padding: 20px;
+  }
+
+  .linkedin-card h3 {
+    margin-top: 14px;
+  }
+
+  .linkedin-card .button {
+    float: none;
+    margin: 18px auto 0;
   }
 }
 
@@ -1206,9 +1262,9 @@ form button {
     grid-template-columns: minmax(270px, 623px) minmax(320px, 592px);
     column-gap: clamp(36px, 5.3vw, 80px);
     align-items: start;
-    min-height: 1162px;
+    min-height: 980px;
     padding-top: 48px;
-    padding-bottom: 120px;
+    padding-bottom: 86px;
   }
 
   .intro-section h2 {
@@ -1233,13 +1289,14 @@ form button {
     transform: none;
   }
 
-  .intro-section > p,
-  .intro-section .button {
+  .intro-copy {
     grid-column: 2;
+    align-self: start;
+    margin-top: 58px;
   }
 
-  .intro-section > p:not(.intro-callout) {
-    margin-top: 77px;
+  .intro-copy > p:not(.intro-callout) {
+    margin-top: 0;
   }
 
   .intro-section p {
@@ -1328,7 +1385,7 @@ form button {
   }
 
   .approach-section > h2 {
-    margin-bottom: 110px;
+    margin-bottom: 82px;
   }
 
   .approach-item {
@@ -1339,7 +1396,7 @@ form button {
   }
 
   .approach-item + .approach-item {
-    margin-top: 74px;
+    margin-top: 62px;
   }
 
   .approach-item.align-right h3 {
@@ -1380,6 +1437,7 @@ form button {
   .contact-section h2,
   .linkedin-section h2 {
     margin-left: 0;
+    width: auto;
   }
 
   .news-section .card-scroller {
@@ -1454,8 +1512,9 @@ form button {
   }
 
   .experience-scroller {
+    --experience-gap: clamp(32px, 3vw, 46px);
     display: flex;
-    gap: 60px;
+    gap: var(--experience-gap);
     margin-top: 156px;
     padding: 0 0 78px;
     overflow-x: auto;
@@ -1464,7 +1523,8 @@ form button {
   }
 
   .experience-scroller article {
-    flex: 0 0 clamp(390px, 31vw, 470px);
+    flex: 0 0 calc((100% - (var(--experience-gap) * 2)) / 3);
+    max-width: none;
     text-align: center;
   }
 
@@ -1515,9 +1575,9 @@ form button {
 
   .linkedin-section .card-scroller {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 430px));
-    justify-content: space-between;
-    gap: 44px;
+    grid-template-columns: repeat(3, minmax(0, 394px));
+    justify-content: center;
+    gap: 24px;
     margin-top: 64px;
     padding: 0;
     overflow: visible;
@@ -1695,9 +1755,13 @@ form button {
 }
 
 @media (max-width: 420px) {
+  .site-frame {
+    --mobile-gutter: 18px;
+  }
+
   .hero-actions {
     left: auto;
-    right: 22px;
+    right: var(--mobile-gutter);
   }
 
   .form-row {
@@ -1713,7 +1777,7 @@ form button {
   .services-section,
   .approach-section,
   .site-footer {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: var(--mobile-gutter);
+    padding-right: var(--mobile-gutter);
   }
 }
