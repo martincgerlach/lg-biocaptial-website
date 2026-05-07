@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260506-5">
+  <link rel="stylesheet" href="css/style.css?v=20260506-9">
 </head>
 <body>
   <div class="site-frame">
@@ -376,21 +376,22 @@
           action="mailto:lene.gerlach@gmail.com"
           method="post"
           enctype="text/plain"
-          data-form-endpoint="https://api.web3forms.com/submit"
+          data-form-endpoint="https://lg-biocapital-contact-form.martingerlach.workers.dev"
           data-recipient-email="lene.gerlach@gmail.com"
         >
-          <input type="hidden" name="access_key" value="">
           <input type="hidden" name="subject" value="New message from LG BioCapital website">
-          <input type="hidden" name="from_name" value="LG BioCapital website">
           <input class="botcheck" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <label>
-              <input type="text" name="name" placeholder="name" required>
+              <input type="text" name="name" placeholder="name" autocomplete="given-name" required>
             </label>
             <label>
-              <input type="text" name="last_name" placeholder="last name">
+              <input type="text" name="last_name" placeholder="last name" autocomplete="family-name">
             </label>
           </div>
+          <label>
+            <input type="email" name="email" placeholder="email" autocomplete="email" required>
+          </label>
           <label class="message-field">
             <textarea name="message" placeholder="message" required></textarea>
           </label>
@@ -437,6 +438,6 @@
     </main>
   </div>
 
-  <script src="js/main.js?v=20260504-1"></script>
+  <script src="js/main.js?v=20260507-1"></script>
 </body>
 </html>

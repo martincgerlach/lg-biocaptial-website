@@ -1147,8 +1147,8 @@ form button {
 
   .logo {
     left: clamp(70px, 5.8vw, 118px);
-    top: 26px;
-    transform: scale(clamp(1.45, 0.098vw, 2));
+    top: clamp(26px, 1.46vw, 30px);
+    transform: scale(1.45);
     transform-origin: left top;
   }
 
@@ -1191,9 +1191,12 @@ form button {
   }
 
   .hero p {
+    max-width: min(1230px, calc(100vw - 760px));
+    margin-left: auto;
     font-size: clamp(20px, 1.37vw, 28px);
     line-height: 1.5;
     letter-spacing: -0.275px;
+    text-align: center;
   }
 
   .hero-actions {
@@ -1224,6 +1227,12 @@ form button {
     min-height: 53px;
     padding: 10px 24px;
     font-size: 20px;
+  }
+
+  @media (min-width: 1800px) {
+    .logo {
+      transform: scale(2);
+    }
   }
 
   .publication-strip {

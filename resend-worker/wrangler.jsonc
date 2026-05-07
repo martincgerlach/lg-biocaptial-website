@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "lg-biocapital-contact-form",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "vars": {
+    "ALLOWED_ORIGINS": "https://lgbiocapitalpartners.com,http://127.0.0.1:4173,http://localhost:4173",
+    "CONTACT_TO_EMAIL": "lene.gerlach@gmail.com",
+    "RESEND_FROM_EMAIL": "website@lgbiocapitalpartners.com"
+  }
+}

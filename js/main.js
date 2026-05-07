@@ -22,13 +22,20 @@ navLinks.forEach((link) => {
 
 if (form && statusMessage) {
   const submitButton = form.querySelector('button[type="submit"]');
-  const placeholderKeys = new Set(["", "YOUR_WEB3FORMS_ACCESS_KEY"]);
+  const placeholderEndpointParts = [
+    "YOUR_WORKERS_SUBDOMAIN",
+    "api.web3forms.com",
+  ];
 
   const setStatus = (message, type = "info") => {
     statusMessage.textContent = message;
     statusMessage.classList.toggle("is-error", type === "error");
     statusMessage.classList.toggle("is-success", type === "success");
   };
+
+  const hasConfiguredEndpoint = (endpoint) =>
+    Boolean(endpoint)
+    && !placeholderEndpointParts.some((placeholder) => endpoint.includes(placeholder));
 
   const buildMailtoUrl = (formData) => {
     const recipient = form.dataset.recipientEmail || "lene.gerlach@gmail.com";
@@ -51,6 +58,15 @@ if (form && statusMessage) {
     return `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
+  const buildResendPayload = (formData) => ({
+    name: String(formData.get("name") || "").trim(),
+    last_name: String(formData.get("last_name") || "").trim(),
+    email: String(formData.get("email") || "").trim(),
+    message: String(formData.get("message") || "").trim(),
+    subject: String(formData.get("subject") || "New message from LG BioCapital website").trim(),
+    botcheck: Boolean(formData.get("botcheck")),
+  });
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
@@ -59,20 +75,23 @@ if (form && statusMessage) {
       return;
     }
 
-    const accessKey = String(formData.get("access_key") || "").trim();
     const endpoint = form.dataset.formEndpoint;
+    const payload = buildResendPayload(formData);
 
-    if (endpoint && !placeholderKeys.has(accessKey)) {
-      submitButton?.setAttribute("disabled", "true");
+    if (hasConfiguredEndpoint(endpoint)) {
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
       setStatus("Sending your message...");
 
       try {
         const response = await fetch(endpoint, {
           method: "POST",
-          body: formData,
           headers: {
+            "Content-Type": "application/json",
             Accept: "application/json",
           },
+          body: JSON.stringify(payload),
         });
         const result = await response.json().catch(() => ({}));
 
@@ -85,7 +104,9 @@ if (form && statusMessage) {
       } catch (error) {
         setStatus("Something went wrong. Please email Lene directly instead.", "error");
       } finally {
-        submitButton?.removeAttribute("disabled");
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
       }
 
       return;
