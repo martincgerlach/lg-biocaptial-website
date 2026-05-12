@@ -32,6 +32,10 @@ img {
   max-width: 100%;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 a {
   color: inherit;
 }
@@ -80,18 +84,15 @@ a {
   top: 30px;
   z-index: 2;
   display: block;
-  width: 217px;
-  height: 44px;
-  overflow: hidden;
+  width: 180px;
+  height: auto;
+  overflow: visible;
   text-decoration: none;
 }
 
 .logo img {
-  position: absolute;
-  left: -34px;
-  top: -45px;
-  width: 277px;
-  max-width: none;
+  position: static;
+  width: 100%;
   height: auto;
   filter: brightness(0) invert(1);
 }
@@ -278,39 +279,39 @@ a {
 }
 
 .publication-logo-wild {
-  --logo-slot: 98px;
-  --logo-width: 86px;
-  --logo-height: 30px;
+  --logo-slot: 118px;
+  --logo-width: 104px;
+  --logo-height: 36px;
 }
 
 .publication-logo-hadean {
-  --logo-slot: 126px;
-  --logo-width: 113px;
-  --logo-height: 22px;
+  --logo-slot: 150px;
+  --logo-width: 136px;
+  --logo-height: 28px;
 }
 
 .publication-logo-cbio {
-  --logo-slot: 58px;
-  --logo-width: 39px;
-  --logo-height: 31px;
+  --logo-slot: 70px;
+  --logo-width: 50px;
+  --logo-height: 40px;
 }
 
 .publication-logo-innovation {
-  --logo-slot: 138px;
-  --logo-width: 129px;
-  --logo-height: 15px;
+  --logo-slot: 165px;
+  --logo-width: 155px;
+  --logo-height: 18px;
 }
 
 .publication-logo-invest {
-  --logo-slot: 82px;
-  --logo-width: 69px;
-  --logo-height: 37px;
+  --logo-slot: 98px;
+  --logo-width: 84px;
+  --logo-height: 46px;
 }
 
 .publication-logo-wide {
-  --logo-slot: 126px;
-  --logo-width: 112px;
-  --logo-height: 42px;
+  --logo-slot: 150px;
+  --logo-width: 136px;
+  --logo-height: 52px;
 }
 
 @keyframes logo-marquee {
@@ -321,7 +322,7 @@ a {
 
 .intro-section {
   min-height: 1301px;
-  padding: 48px var(--mobile-gutter) 58px;
+  padding: 74px var(--mobile-gutter) 58px;
   background: var(--pale-blue);
 }
 
@@ -359,7 +360,7 @@ h3 {
   width: 100%;
   max-width: 393px;
   height: 531px;
-  margin: 84px 0 23px;
+  margin: 42px 0 23px;
   overflow: hidden;
   background: var(--white);
 }
@@ -395,7 +396,7 @@ h3 {
 
 .intro-section .intro-callout {
   margin-top: 18px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.8;
   letter-spacing: 1.8px;
 }
@@ -421,12 +422,12 @@ h3 {
 .service-list {
   display: grid;
   gap: 24px;
-  margin-top: 54px;
+  margin-top: 40px;
 }
 
 .service-list article {
   min-height: 185px;
-  padding: 7px 14px 18px;
+  padding: 18px 14px;
   background: var(--plum);
   color: var(--white);
   box-shadow: var(--shadow);
@@ -492,7 +493,7 @@ h3 {
 }
 
 .approach-item {
-  margin-bottom: 34px;
+  margin-bottom: 48px;
 }
 
 .approach-item h3 {
@@ -590,6 +591,8 @@ h3 {
   display: grid;
   gap: 34px;
   padding: 0 var(--mobile-gutter);
+  position: relative;
+  z-index: 2;
 }
 
 .experience-section h2 {
@@ -626,6 +629,8 @@ h3 {
   overflow-x: auto;
   scroll-snap-type: x proximity;
   scrollbar-width: none;
+  position: relative;
+  z-index: 1;
 }
 
 .experience-scroller article {
@@ -670,13 +675,37 @@ h3 {
 }
 
 .scroll-note {
-  margin: 62px 28px 0 0;
-  color: #000;
-  font-size: 11px;
-  line-height: 1.5;
-  letter-spacing: 2.2px;
-  text-align: right;
+  width: 190px;
+  margin: 48px 24px 0 auto;
+  color: var(--plum);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 4px;
+  text-align: left;
+}
+
+.scroll-note span {
+  display: block;
+  width: max-content;
   transform: rotate(-13deg);
+  transform-origin: left center;
+  white-space: nowrap;
+}
+
+.scroll-note svg {
+  display: block;
+  width: 145px;
+  height: auto;
+  margin: 0 0 0 55px;
+  overflow: visible;
+}
+
+.scroll-note path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .testimonials-section {
@@ -795,11 +824,11 @@ address {
   gap: 0;
   margin: 0 0 47px;
   color: var(--lime);
-  font-size: 21px;
+  font-size: clamp(16px, 4.2vw, 21px);
   font-style: normal;
   font-weight: 500;
   line-height: 1.91;
-  letter-spacing: 3.15px;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
@@ -1048,8 +1077,10 @@ form button {
     overflow: hidden;
   }
 
-  .approach-item,
-  .approach-item.align-right,
+  .approach-item.align-right {
+    text-align: right;
+  }
+
   .approach-item.align-left {
     text-align: left;
   }
@@ -1147,9 +1178,8 @@ form button {
 
   .logo {
     left: clamp(70px, 5.8vw, 118px);
-    top: clamp(26px, 1.46vw, 30px);
-    transform: scale(1.45);
-    transform-origin: left top;
+    top: clamp(35px, 2.25vw, 46px);
+    width: clamp(230px, 16vw, 300px);
   }
 
   .menu-button {
@@ -1159,7 +1189,7 @@ form button {
   .site-nav {
     inset: clamp(55px, 3.55vw, 73px) clamp(64px, 5.8vw, 120px) auto auto;
     display: flex;
-    gap: clamp(34px, 2.2vw, 45px);
+    gap: clamp(28px, 1.9vw, 38px);
     width: auto;
     padding: 0;
     border: 0;
@@ -1171,7 +1201,7 @@ form button {
 
   .site-nav a {
     padding: 0;
-    font-size: clamp(20px, 1.17vw, 24px);
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: 2px;
   }
@@ -1179,30 +1209,32 @@ form button {
   .hero-copy {
     right: clamp(64px, 5.8vw, 120px);
     top: 63.5%;
-    width: min(1320px, calc(100vw - 260px));
+    width: min(1160px, calc(100vw - 560px));
     transform: none;
+    text-align: right;
   }
 
   .hero h1 {
     width: 100%;
     margin-bottom: 0;
-    font-size: clamp(38px, 2.55vw, 52px);
+    font-size: clamp(34px, 2.35vw, 48px);
     line-height: 1.1;
   }
 
   .hero p {
-    max-width: min(1230px, calc(100vw - 760px));
+    max-width: min(980px, calc(100vw - 610px));
     margin-left: auto;
-    font-size: clamp(20px, 1.37vw, 28px);
-    line-height: 1.5;
+    font-size: clamp(17px, 1.05vw, 21px);
+    font-weight: 400;
+    line-height: 1.42;
     letter-spacing: -0.275px;
-    text-align: center;
+    text-align: right;
   }
 
   .hero-actions {
     left: auto;
     right: clamp(64px, 5.8vw, 120px);
-    top: 81%;
+    top: 84%;
     bottom: auto;
     display: flex;
     width: auto;
@@ -1210,29 +1242,23 @@ form button {
   }
 
   .hero-actions .button {
-    min-height: clamp(53px, 3.62vw, 74px);
-    padding: 10px 24px;
-    font-size: clamp(20px, 1.37vw, 28px);
+    min-height: clamp(44px, 2.75vw, 56px);
+    padding: 8px 20px;
+    font-size: clamp(18px, 1.1vw, 22px);
   }
 
   .hero-actions .button:first-child {
-    width: clamp(303px, 20.7vw, 424px);
+    width: clamp(264px, 18vw, 340px);
   }
 
   .hero-actions .button:last-child {
-    width: clamp(306px, 20.7vw, 424px);
+    width: clamp(268px, 18vw, 344px);
   }
 
   .button {
-    min-height: 53px;
-    padding: 10px 24px;
-    font-size: 20px;
-  }
-
-  @media (min-width: 1800px) {
-    .logo {
-      transform: scale(2);
-    }
+    min-height: 46px;
+    padding: 8px 22px;
+    font-size: 18px;
   }
 
   .publication-strip {
@@ -1272,7 +1298,7 @@ form button {
     column-gap: clamp(36px, 5.3vw, 80px);
     align-items: start;
     min-height: 980px;
-    padding-top: 48px;
+    padding-top: 60px;
     padding-bottom: 86px;
   }
 
@@ -1323,7 +1349,7 @@ form button {
   .intro-section .intro-callout {
     margin-top: 24px;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   .intro-section .button {
@@ -1408,12 +1434,13 @@ form button {
   .approach-item {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 30px;
-    margin: 0;
+    column-gap: 36px;
+    max-width: min(980px, 72vw);
+    margin: 0 auto;
   }
 
   .approach-item + .approach-item {
-    margin-top: 62px;
+    margin-top: 82px;
   }
 
   .approach-item.align-right h3 {
@@ -1563,9 +1590,15 @@ form button {
   }
 
   .scroll-note {
-    margin: 36px 80px 0 0;
+    width: 310px;
+    margin: 36px 80px 0 auto;
     font-size: 18px;
     letter-spacing: 5px;
+  }
+
+  .scroll-note svg {
+    width: 210px;
+    margin-left: 92px;
   }
 
   .testimonials-section {
@@ -1588,6 +1621,10 @@ form button {
   .linkedin-section {
     padding-top: 60px;
     padding-bottom: 110px;
+  }
+
+  .linkedin-section h2 {
+    text-align: center;
   }
 
   .linkedin-section .card-scroller {
@@ -1727,8 +1764,7 @@ form button {
   .footer-logo {
     left: var(--desktop-gutter);
     top: 55px;
-    transform: scale(1.45);
-    transform-origin: left top;
+    width: clamp(230px, 16vw, 300px);
   }
 
   .site-footer > p {

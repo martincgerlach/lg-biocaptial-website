@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 150" role="img" aria-labelledby="title">
+  <title id="title">LG BioCapital</title>
+  <style>
+    .logo-text {
+      fill: #45242f;
+      font-family: "Cormorant Garamond", "Times New Roman", serif;
+    }
+
+    .logo-lg {
+      font-size: 72px;
+      letter-spacing: 0.08em;
+    }
+
+    .logo-bio {
+      font-size: 118px;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .logo-capital {
+      font-size: 58px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+    }
+  </style>
+  <text class="logo-text logo-lg" x="0" y="101">LG</text>
+  <text class="logo-text logo-bio" x="126" y="99">bio</text>
+  <text class="logo-text logo-capital" x="318" y="101">CAPITAL</text>
+</svg>
