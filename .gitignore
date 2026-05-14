@@ -1,6 +1,11 @@
 # macOS
 .DS_Store
 
+# Local notes and timesheets
+*.md
+*.csv
+tmp/
+
 # Local dependencies
 node_modules/
 resend-worker/node_modules/

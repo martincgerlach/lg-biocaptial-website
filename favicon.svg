@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">LG BioCapital favicon</title>
+  <rect width="256" height="256" fill="#ffffff"/>
+  <rect x="15" y="15" width="226" height="226" rx="44" fill="#45242f"/>
+  <text
+    x="50%"
+    y="136"
+    fill="#ffffff"
+    font-family="Cormorant Garamond, Georgia, Times New Roman, serif"
+    font-size="82"
+    font-weight="600"
+    letter-spacing="0"
+    text-anchor="middle"
+  >LG</text>
+  <rect x="54" y="171" width="148" height="12" rx="6" fill="#b4af2f"/>
+</svg>
