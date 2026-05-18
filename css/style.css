@@ -1324,26 +1324,36 @@ form button {
 
   .intro-section {
     display: grid;
-    grid-template-columns: minmax(270px, 623px) minmax(320px, 592px);
-    column-gap: clamp(36px, 5.3vw, 80px);
+    grid-template-columns: min(41.2vw, 623px) min(39.1vw, 592px);
+    column-gap: min(5.3vw, 80px);
     align-items: start;
-    min-height: 980px;
-    padding-top: 60px;
+    justify-content: start;
+    min-height: min(76.8vw, 1162px);
+    padding-left: min(6.6vw, 100px);
+    padding-right: min(6.6vw, 100px);
+    padding-top: min(3.2vw, 48px);
     padding-bottom: 86px;
   }
 
   .intro-section h2 {
     grid-column: 1 / -1;
-    max-width: 1280px;
-    font-size: clamp(64px, 6.6vw, 100px);
+    max-width: min(79.8vw, 1207px);
+    font-size: clamp(52px, 6.25vw, 96px);
+    font-weight: 400;
     line-height: 1.1;
     letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .intro-section h2 span {
+    display: block;
+    white-space: nowrap;
   }
 
   .intro-image {
     width: 100%;
     max-width: none;
-    height: clamp(560px, 49vw, 740px);
+    height: min(48.9vw, 740px);
     margin: 34px 0 0;
   }
 
@@ -1365,7 +1375,7 @@ form button {
   .intro-copy {
     grid-column: 2;
     align-self: start;
-    margin-top: 58px;
+    margin-top: min(5.15vw, 78px);
   }
 
   .intro-copy > p:not(.intro-callout) {
@@ -1373,19 +1383,20 @@ form button {
   }
 
   .intro-section p {
-    font-size: 20px;
+    font-size: clamp(18px, 1.65vw, 25px);
   }
 
   .intro-section .intro-callout {
-    margin-top: 24px;
-    font-size: 20px;
+    margin-top: min(1.72vw, 26px);
+    font-size: clamp(18px, 1.65vw, 25px);
     font-weight: 700;
   }
 
   .intro-section .button {
-    width: min(411px, 100%);
-    min-height: 60px;
-    margin-top: 30px;
+    width: min(27.2vw, 411px);
+    min-height: min(3.95vw, 60px);
+    margin-top: min(2.78vw, 42px);
+    font-size: clamp(18px, 1.65vw, 25px);
   }
 
   .services-section,
@@ -1690,17 +1701,25 @@ form button {
 
   .contact-section {
     display: grid;
-    grid-template-columns: minmax(0, 699px) minmax(320px, 1fr);
-    column-gap: clamp(24px, 2vw, 34px);
+    grid-template-columns: minmax(0, 575px) minmax(320px, 498px);
+    column-gap: clamp(24px, 2.65vw, 33px);
     row-gap: 0;
-    padding-top: 120px;
-    padding-bottom: 90px;
+    justify-content: center;
+    padding-top: clamp(110px, 11.9vw, 148px);
+    padding-right: clamp(48px, 5.4vw, 67px);
+    padding-bottom: 72px;
+    padding-left: clamp(48px, 5.6vw, 70px);
+    border-bottom: 5px solid var(--lime);
   }
 
   .contact-section h2 {
-    grid-column: 1;
-    justify-self: start;
-    margin-bottom: 63px;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 0 0 clamp(28px, 2.4vw, 30px);
+    font-size: clamp(58px, 6.55vw, 82px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.16em;
   }
 
   .contact-lead,
@@ -1711,57 +1730,62 @@ form button {
   }
 
   .contact-lead {
-    margin: 0 0 33px;
-    font-size: clamp(44px, 4.6vw, 70px);
+    margin: 0 0 clamp(32px, 2.8vw, 35px);
+    font-size: clamp(42px, 4.5vw, 56px);
+    line-height: 1.12;
   }
 
   .contact-section address {
-    margin-bottom: 48px;
-    font-size: clamp(22px, 2.3vw, 35px);
-    letter-spacing: 0.15em;
+    margin-bottom: clamp(34px, 3.2vw, 40px);
+    font-size: clamp(22px, 2.45vw, 30px);
+    line-height: 1.85;
+    letter-spacing: 0.16em;
   }
 
   .form-note {
-    margin-bottom: 14px;
-    font-size: 20px;
-    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-size: clamp(15px, 1.45vw, 18px);
+    letter-spacing: 0.13em;
   }
 
   .contact-section form {
     align-self: start;
-    gap: 17px;
+    max-width: 575px;
+    gap: 14px;
   }
 
   .form-row {
-    grid-template-columns: minmax(0, 295px) minmax(0, 384px);
-    gap: 20px;
+    grid-template-columns: minmax(0, 243px) minmax(0, 316px);
+    gap: 16px;
   }
 
   input {
-    height: 63px;
-    padding: 16px 24px;
+    height: 52px;
+    padding: 13px 20px;
   }
 
   textarea {
-    height: 215px;
-    padding: 16px 24px;
+    height: 176px;
+    padding: 13px 20px;
   }
 
   form button {
-    width: 242px;
+    width: 198px;
+    min-height: 43px;
     margin-top: 0;
+    font-size: clamp(16px, 1.55vw, 19px);
   }
 
   .contact-image {
     position: relative;
     grid-column: 2;
-    grid-row: 1 / span 5;
+    grid-row: 2 / span 4;
     display: block;
     width: 100%;
-    height: 924px;
-    margin-top: 126px;
+    height: min(61.3vw, 762px);
+    margin-top: 0;
     overflow: hidden;
-    background: #d9d9d9;
+    background: var(--white);
   }
 
   .contact-image img {
