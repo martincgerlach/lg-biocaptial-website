@@ -94,7 +94,7 @@ a {
   position: static;
   width: 100%;
   height: auto;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .menu-button {
@@ -192,7 +192,7 @@ a {
   padding: 7px 16px;
   border: 0;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.8px;
   text-decoration: none;
@@ -564,11 +564,36 @@ h3 {
   object-position: center 22%;
 }
 
+.news-card-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 245px;
+  background: var(--pale-blue);
+  color: var(--lime);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .news-card h3 {
   margin-top: 18px;
   color: var(--plum);
   font-size: 30px;
   line-height: 1.1;
+}
+
+.news-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card-text h3 {
+  font-size: 26px;
+  line-height: 1.15;
 }
 
 .news-card p {
@@ -581,6 +606,12 @@ h3 {
 .news-card .button {
   float: right;
   width: 172px;
+}
+
+.news-card-text .button {
+  align-self: flex-end;
+  float: none;
+  margin-top: auto;
 }
 
 .experience-section {
@@ -1180,7 +1211,9 @@ form button {
   }
 
   .site-frame {
-    --desktop-gutter: clamp(72px, 5.5vw, 100px);
+    --desktop-gutter: clamp(56px, 5.5vw, 100px);
+    --content-max-width: 1360px;
+    --content-gutter: max(var(--desktop-gutter), calc((100vw - var(--content-max-width)) / 2));
     width: 100%;
     max-width: none;
     box-shadow: none;
@@ -1206,7 +1239,7 @@ form button {
   }
 
   .logo {
-    left: clamp(70px, 5.8vw, 118px);
+    left: var(--content-gutter);
     top: clamp(35px, 2.25vw, 46px);
     width: clamp(230px, 16vw, 300px);
   }
@@ -1216,7 +1249,7 @@ form button {
   }
 
   .site-nav {
-    inset: clamp(55px, 3.55vw, 73px) clamp(64px, 5.8vw, 120px) auto clamp(380px, 28vw, 470px);
+    inset: clamp(55px, 3.55vw, 73px) var(--content-gutter) auto clamp(380px, 28vw, 470px);
     display: flex;
     justify-content: flex-end;
     gap: clamp(16px, 1.6vw, 38px);
@@ -1237,9 +1270,9 @@ form button {
   }
 
   .hero-copy {
-    right: clamp(64px, 5.8vw, 120px);
+    right: var(--content-gutter);
     top: 63.5%;
-    width: min(1160px, calc(100vw - 560px));
+    width: min(1160px, calc(100vw - var(--content-gutter) - 560px));
     transform: none;
     text-align: right;
   }
@@ -1252,7 +1285,7 @@ form button {
   }
 
   .hero p {
-    max-width: min(980px, calc(100vw - 610px));
+    max-width: min(980px, calc(100vw - var(--content-gutter) - 610px));
     margin-left: auto;
     font-size: clamp(17px, 1.05vw, 21px);
     font-weight: 400;
@@ -1263,7 +1296,7 @@ form button {
 
   .hero-actions {
     left: auto;
-    right: clamp(64px, 5.8vw, 120px);
+    right: var(--content-gutter);
     top: 84%;
     bottom: auto;
     display: flex;
@@ -1274,7 +1307,7 @@ form button {
   .hero-actions .button {
     min-height: clamp(44px, 2.75vw, 56px);
     padding: 8px 20px;
-    font-size: clamp(18px, 1.1vw, 22px);
+    font-size: 18px;
   }
 
   .hero-actions .button:first-child {
@@ -1318,8 +1351,8 @@ form button {
   .linkedin-section,
   .contact-section,
   .site-footer {
-    padding-left: var(--desktop-gutter);
-    padding-right: var(--desktop-gutter);
+    padding-left: var(--content-gutter);
+    padding-right: var(--content-gutter);
   }
 
   .intro-section {
@@ -1327,10 +1360,10 @@ form button {
     grid-template-columns: min(41.2vw, 623px) min(39.1vw, 592px);
     column-gap: min(5.3vw, 80px);
     align-items: start;
-    justify-content: start;
+    justify-content: center;
     min-height: min(76.8vw, 1162px);
-    padding-left: min(6.6vw, 100px);
-    padding-right: min(6.6vw, 100px);
+    padding-left: var(--content-gutter);
+    padding-right: var(--content-gutter);
     padding-top: min(3.2vw, 48px);
     padding-bottom: 86px;
   }
@@ -1396,7 +1429,7 @@ form button {
     width: min(27.2vw, 411px);
     min-height: min(3.95vw, 60px);
     margin-top: min(2.78vw, 42px);
-    font-size: clamp(18px, 1.65vw, 25px);
+    font-size: 18px;
   }
 
   .services-section,
@@ -1555,9 +1588,18 @@ form button {
     object-position: center;
   }
 
+  .news-card-placeholder {
+    height: 410px;
+    font-size: 34px;
+  }
+
   .news-card h3 {
     margin-top: 18px;
     font-size: 33px;
+  }
+
+  .news-card-text h3 {
+    font-size: 30px;
   }
 
   .news-card .button {
@@ -1605,7 +1647,7 @@ form button {
     margin-top: 156px;
     padding: 0 0 78px;
     overflow-x: auto;
-    scroll-padding-inline: var(--desktop-gutter);
+    scroll-padding-inline: var(--content-gutter);
     scrollbar-width: none;
   }
 
@@ -1706,9 +1748,9 @@ form button {
     row-gap: 0;
     justify-content: center;
     padding-top: clamp(110px, 11.9vw, 148px);
-    padding-right: clamp(48px, 5.4vw, 67px);
+    padding-right: var(--content-gutter);
     padding-bottom: 72px;
-    padding-left: clamp(48px, 5.6vw, 70px);
+    padding-left: var(--content-gutter);
     border-bottom: 5px solid var(--lime);
   }
 
@@ -1773,7 +1815,7 @@ form button {
     width: 198px;
     min-height: 43px;
     margin-top: 0;
-    font-size: clamp(16px, 1.55vw, 19px);
+    font-size: 18px;
   }
 
   .contact-image {
@@ -1820,7 +1862,7 @@ form button {
 
   .footer-logo {
     display: block;
-    left: var(--desktop-gutter);
+    left: var(--content-gutter);
     top: 55px;
     width: clamp(230px, 16vw, 300px);
   }
@@ -1921,7 +1963,7 @@ form button {
   .hero-actions .button {
     min-height: 42px;
     padding: 8px 14px;
-    font-size: clamp(14px, 1.55vw, 17px);
+    font-size: 18px;
   }
 
   .hero-actions .button:first-child,
