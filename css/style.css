@@ -1071,30 +1071,39 @@ form button {
   }
 
   .hero-copy {
-    right: var(--mobile-gutter);
-    width: 212px;
+    right: calc(var(--mobile-gutter) + 48px);
+    width: min(202px, calc(100% - (var(--mobile-gutter) * 2)));
   }
 
   .hero h1 {
-    width: 212px;
-    font-size: 22px;
+    width: 100%;
+    font-size: 21px;
+    line-height: 1.08;
   }
 
   .hero p {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.35;
   }
 
   .hero-actions {
     left: auto;
-    right: var(--mobile-gutter);
-    width: 212px;
+    right: calc(var(--mobile-gutter) + 48px);
+    width: min(224px, calc(100% - (var(--mobile-gutter) * 2)));
   }
 
   .hero-actions .button {
-    padding-right: 10px;
-    padding-left: 10px;
-    font-size: 15px;
-    letter-spacing: 0.3px;
+    width: 100%;
+    min-height: 42px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+
+  .intro-section h2 span {
+    display: block;
   }
 
   .service-list {
@@ -1137,24 +1146,33 @@ form button {
     overflow: hidden;
   }
 
+  .approach-item,
   .approach-item.align-right {
-    text-align: right;
+    width: 100%;
+    max-width: 360px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
   }
 
   .approach-item.align-left {
-    text-align: left;
+    text-align: center;
   }
 
   .approach-item h3 {
     font-size: 26px;
+    line-height: 1.35;
     letter-spacing: 2px;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .approach-item p {
     font-size: 16px;
+    line-height: 1.45;
     letter-spacing: 0.2px;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .intro-section p {
@@ -1239,7 +1257,7 @@ form button {
   }
 
   .logo {
-    left: var(--content-gutter);
+    left: var(--desktop-gutter);
     top: clamp(35px, 2.25vw, 46px);
     width: clamp(230px, 16vw, 300px);
   }
@@ -1249,7 +1267,7 @@ form button {
   }
 
   .site-nav {
-    inset: clamp(55px, 3.55vw, 73px) var(--content-gutter) auto clamp(380px, 28vw, 470px);
+    inset: clamp(55px, 3.55vw, 73px) var(--desktop-gutter) auto clamp(380px, 28vw, 470px);
     display: flex;
     justify-content: flex-end;
     gap: clamp(16px, 1.6vw, 38px);
@@ -1270,9 +1288,9 @@ form button {
   }
 
   .hero-copy {
-    right: var(--content-gutter);
+    right: var(--desktop-gutter);
     top: 63.5%;
-    width: min(1160px, calc(100vw - var(--content-gutter) - 560px));
+    width: min(1160px, calc(100vw - var(--desktop-gutter) - 560px));
     transform: none;
     text-align: right;
   }
@@ -1285,7 +1303,7 @@ form button {
   }
 
   .hero p {
-    max-width: min(980px, calc(100vw - var(--content-gutter) - 610px));
+    max-width: min(980px, calc(100vw - var(--desktop-gutter) - 610px));
     margin-left: auto;
     font-size: clamp(17px, 1.05vw, 21px);
     font-weight: 400;
@@ -1296,7 +1314,7 @@ form button {
 
   .hero-actions {
     left: auto;
-    right: var(--content-gutter);
+    right: var(--desktop-gutter);
     top: 84%;
     bottom: auto;
     display: flex;
@@ -1305,17 +1323,17 @@ form button {
   }
 
   .hero-actions .button {
-    min-height: clamp(44px, 2.75vw, 56px);
-    padding: 8px 20px;
+    min-height: clamp(54px, 4.05vw, 80px);
+    padding: 10px 24px;
     font-size: 18px;
   }
 
   .hero-actions .button:first-child {
-    width: clamp(264px, 18vw, 340px);
+    width: clamp(320px, 26vw, 510px);
   }
 
   .hero-actions .button:last-child {
-    width: clamp(268px, 18vw, 344px);
+    width: clamp(320px, 26vw, 510px);
   }
 
   .button {
@@ -1360,10 +1378,10 @@ form button {
     grid-template-columns: min(41.2vw, 623px) min(39.1vw, 592px);
     column-gap: min(5.3vw, 80px);
     align-items: start;
-    justify-content: center;
+    justify-content: start;
     min-height: min(76.8vw, 1162px);
-    padding-left: var(--content-gutter);
-    padding-right: var(--content-gutter);
+    padding-left: var(--desktop-gutter);
+    padding-right: var(--desktop-gutter);
     padding-top: min(3.2vw, 48px);
     padding-bottom: 86px;
   }
@@ -1743,7 +1761,7 @@ form button {
 
   .contact-section {
     display: grid;
-    grid-template-columns: minmax(0, 575px) minmax(320px, 498px);
+    grid-template-columns: minmax(0, min(46vw, 575px)) minmax(0, min(40vw, 498px));
     column-gap: clamp(24px, 2.65vw, 33px);
     row-gap: 0;
     justify-content: center;
@@ -1797,22 +1815,22 @@ form button {
   }
 
   .form-row {
-    grid-template-columns: minmax(0, 243px) minmax(0, 316px);
-    gap: 16px;
+    grid-template-columns: minmax(0, 42.3%) minmax(0, 54.9%);
+    gap: clamp(12px, 1.1vw, 16px);
   }
 
   input {
-    height: 52px;
+    height: clamp(42px, 3.43vw, 52px);
     padding: 13px 20px;
   }
 
   textarea {
-    height: 176px;
+    height: clamp(142px, 11.6vw, 176px);
     padding: 13px 20px;
   }
 
   form button {
-    width: 198px;
+    width: clamp(160px, 13.1vw, 198px);
     min-height: 43px;
     margin-top: 0;
     font-size: 18px;
@@ -1838,6 +1856,8 @@ form button {
     max-width: none;
     object-fit: cover;
     object-position: center top;
+    transform: translateY(-8%) scale(1.12);
+    transform-origin: center top;
   }
 
   .image-footer {
@@ -1961,14 +1981,14 @@ form button {
   }
 
   .hero-actions .button {
-    min-height: 42px;
-    padding: 8px 14px;
+    min-height: clamp(46px, 4.9vw, 54px);
+    padding: 8px 16px;
     font-size: 18px;
   }
 
   .hero-actions .button:first-child,
   .hero-actions .button:last-child {
-    width: clamp(210px, 22vw, 240px);
+    width: clamp(230px, 25vw, 280px);
   }
 
   .experience-header {
@@ -1996,9 +2016,43 @@ form button {
     --mobile-gutter: 18px;
   }
 
-  .hero-actions {
-    left: auto;
+  .hero-copy {
+    left: 42%;
     right: var(--mobile-gutter);
+    width: auto;
+  }
+
+  .hero h1 {
+    font-size: 18px;
+    letter-spacing: -0.15px;
+  }
+
+  .hero p {
+    font-size: 12.5px;
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+
+  .hero-actions {
+    left: 30%;
+    right: var(--mobile-gutter);
+    width: auto;
+  }
+
+  .hero-actions .button {
+    padding-right: 4px;
+    padding-left: 4px;
+    letter-spacing: -0.2px;
+  }
+
+  .intro-section h2 {
+    font-size: clamp(29px, 7.7vw, 32px);
+    letter-spacing: 1.25px;
+  }
+
+  .service-list h3 {
+    font-size: 24px;
+    letter-spacing: 0.8px;
   }
 
   .form-row {
