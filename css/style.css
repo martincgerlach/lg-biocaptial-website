@@ -1323,17 +1323,17 @@ form button {
   }
 
   .hero-actions .button {
-    min-height: clamp(54px, 4.05vw, 80px);
-    padding: 10px 24px;
+    min-height: clamp(44px, 2.75vw, 56px);
+    padding: 8px 20px;
     font-size: 18px;
   }
 
   .hero-actions .button:first-child {
-    width: clamp(320px, 26vw, 510px);
+    width: clamp(264px, 18vw, 340px);
   }
 
   .hero-actions .button:last-child {
-    width: clamp(320px, 26vw, 510px);
+    width: clamp(268px, 18vw, 344px);
   }
 
   .button {
@@ -1444,8 +1444,11 @@ form button {
   }
 
   .intro-section .button {
-    width: min(27.2vw, 411px);
-    min-height: min(3.95vw, 60px);
+    width: max-content;
+    min-width: 300px;
+    max-width: 100%;
+    min-height: 46px;
+    padding: 8px 28px;
     margin-top: min(2.78vw, 42px);
     font-size: 18px;
   }
@@ -1981,14 +1984,14 @@ form button {
   }
 
   .hero-actions .button {
-    min-height: clamp(46px, 4.9vw, 54px);
-    padding: 8px 16px;
+    min-height: 42px;
+    padding: 8px 14px;
     font-size: 18px;
   }
 
   .hero-actions .button:first-child,
   .hero-actions .button:last-child {
-    width: clamp(230px, 25vw, 280px);
+    width: clamp(210px, 22vw, 240px);
   }
 
   .experience-header {
