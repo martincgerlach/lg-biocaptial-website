@@ -223,8 +223,10 @@ a {
 }
 
 .publication-strip {
+  display: flex;
+  align-items: center;
   height: 132px;
-  padding: 18px var(--mobile-gutter) 0;
+  padding: 0 var(--mobile-gutter);
   background: var(--white);
   overflow: hidden;
 }
@@ -232,7 +234,7 @@ a {
 .publication-track {
   display: flex;
   width: max-content;
-  height: 70px;
+  height: 76px;
   overflow-x: visible;
   overflow-y: hidden;
   scrollbar-width: none;
@@ -1072,32 +1074,35 @@ form button {
 
   .hero-copy {
     right: calc(var(--mobile-gutter) + 48px);
+    top: 396px;
     width: min(202px, calc(100% - (var(--mobile-gutter) * 2)));
   }
 
   .hero h1 {
     width: 100%;
-    font-size: 21px;
+    font-size: 26px;
     line-height: 1.08;
   }
 
   .hero p {
-    font-size: 14px;
-    line-height: 1.35;
+    font-size: 15.5px;
+    line-height: 1.32;
   }
 
   .hero-actions {
     left: auto;
     right: calc(var(--mobile-gutter) + 48px);
-    width: min(224px, calc(100% - (var(--mobile-gutter) * 2)));
+    top: 640px;
+    width: min(214px, calc(100% - (var(--mobile-gutter) * 2)));
+    gap: 12px;
   }
 
   .hero-actions .button {
     width: 100%;
-    min-height: 42px;
+    min-height: 36px;
     padding-right: 6px;
     padding-left: 6px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.1;
     letter-spacing: 0;
   }
@@ -1125,6 +1130,17 @@ form button {
   .news-card {
     flex: 0 0 auto;
     width: 100%;
+  }
+
+  .news-card h3,
+  .news-card-text h3 {
+    font-size: 22px;
+    line-height: 1.16;
+  }
+
+  .news-card-text .news-card-placeholder {
+    height: 180px;
+    font-size: 22px;
   }
 
   .experience-scroller {
@@ -1344,7 +1360,7 @@ form button {
 
   .publication-strip {
     height: 229px;
-    padding: 26px 0 0;
+    padding: 0;
   }
 
   .publication-track {
@@ -1358,6 +1374,42 @@ form button {
   .publication-set {
     gap: 72px;
     padding-right: 72px;
+  }
+
+  .publication-logo-wild {
+    --logo-slot: 138px;
+    --logo-width: 122px;
+    --logo-height: 42px;
+  }
+
+  .publication-logo-hadean {
+    --logo-slot: 174px;
+    --logo-width: 158px;
+    --logo-height: 34px;
+  }
+
+  .publication-logo-cbio {
+    --logo-slot: 82px;
+    --logo-width: 60px;
+    --logo-height: 48px;
+  }
+
+  .publication-logo-innovation {
+    --logo-slot: 190px;
+    --logo-width: 178px;
+    --logo-height: 22px;
+  }
+
+  .publication-logo-invest {
+    --logo-slot: 114px;
+    --logo-width: 98px;
+    --logo-height: 54px;
+  }
+
+  .publication-logo-wide {
+    --logo-slot: 174px;
+    --logo-width: 158px;
+    --logo-height: 60px;
   }
 
   .intro-section,
@@ -1378,10 +1430,10 @@ form button {
     grid-template-columns: min(41.2vw, 623px) min(39.1vw, 592px);
     column-gap: min(5.3vw, 80px);
     align-items: start;
-    justify-content: start;
+    justify-content: center;
     min-height: min(76.8vw, 1162px);
-    padding-left: var(--desktop-gutter);
-    padding-right: var(--desktop-gutter);
+    padding-left: var(--content-gutter);
+    padding-right: var(--content-gutter);
     padding-top: min(3.2vw, 48px);
     padding-bottom: 86px;
   }
@@ -1612,6 +1664,10 @@ form button {
   .news-card-placeholder {
     height: 410px;
     font-size: 34px;
+  }
+
+  .news-card-text .news-card-placeholder {
+    height: 320px;
   }
 
   .news-card h3 {
@@ -2022,16 +2078,17 @@ form button {
   .hero-copy {
     left: 42%;
     right: var(--mobile-gutter);
+    top: 392px;
     width: auto;
   }
 
   .hero h1 {
-    font-size: 18px;
+    font-size: 22px;
     letter-spacing: -0.15px;
   }
 
   .hero p {
-    font-size: 12.5px;
+    font-size: 14px;
     line-height: 1.3;
     letter-spacing: 0;
   }
@@ -2039,6 +2096,7 @@ form button {
   .hero-actions {
     left: 30%;
     right: var(--mobile-gutter);
+    top: 636px;
     width: auto;
   }
 
