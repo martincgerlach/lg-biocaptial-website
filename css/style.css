@@ -233,6 +233,7 @@ a {
 
 .publication-track {
   display: flex;
+  flex: 0 0 max-content;
   width: max-content;
   height: 76px;
   overflow-x: visible;
@@ -318,7 +319,7 @@ a {
 
 @keyframes logo-marquee {
   to {
-    transform: translateX(-50%);
+    transform: translateX(-33.333333%);
   }
 }
 
@@ -1274,7 +1275,7 @@ form button {
 
   .logo {
     left: var(--desktop-gutter);
-    top: clamp(35px, 2.25vw, 46px);
+    top: clamp(28px, calc(2.25vw - 7px), 39px);
     width: clamp(230px, 16vw, 300px);
   }
 
@@ -1989,6 +1990,7 @@ form button {
 @media (min-width: 768px) and (max-width: 1120px) {
   .logo {
     left: clamp(48px, 6vw, 70px);
+    top: 35px;
     width: clamp(176px, 18vw, 210px);
   }
 
