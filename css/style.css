@@ -317,6 +317,12 @@ a {
   --logo-height: 52px;
 }
 
+.publication-logo-curie {
+  --logo-slot: 168px;
+  --logo-width: 154px;
+  --logo-height: 44px;
+}
+
 @keyframes logo-marquee {
   to {
     transform: translateX(-33.333333%);
@@ -1411,6 +1417,12 @@ form button {
     --logo-slot: 174px;
     --logo-width: 158px;
     --logo-height: 60px;
+  }
+
+  .publication-logo-curie {
+    --logo-slot: 196px;
+    --logo-width: 180px;
+    --logo-height: 52px;
   }
 
   .intro-section,
